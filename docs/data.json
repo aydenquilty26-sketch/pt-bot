@@ -12,9 +12,27 @@
       "equity": 100000.0,
       "cash": 100000.0,
       "positions_value": 0.0
+    },
+    {
+      "timestamp": "2026-07-10T02:23:14.602931+00:00",
+      "equity": 100000.0,
+      "cash": 100000.0,
+      "positions_value": 0.0
     }
   ],
   "recent_cycles": [
+    {
+      "timestamp": "2026-07-10T02:23:15.280805+00:00",
+      "ticker": "AAPL",
+      "technical_score": 0.4,
+      "fundamental_score": 0.8,
+      "composite_score": 0.575,
+      "action": "buy",
+      "risk_decision": "approved",
+      "risk_reason": "within limits",
+      "order_id": "8d2f14e7-41c2-4dc4-b6a3-64efaa219a33",
+      "notes": "submitted"
+    },
     {
       "timestamp": "2026-07-10T02:16:25.617036+00:00",
       "ticker": "AAPL",
