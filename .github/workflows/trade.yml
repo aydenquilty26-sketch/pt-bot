@@ -1,0 +1,45 @@
+name: PT trading bot
+
+on:
+  schedule:
+    - cron: '*/30 13-20 * * 1-5'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run trading cycle
+        env:
+          APCA_API_KEY_ID: ${{ secrets.APCA_API_KEY_ID }}
+          APCA_API_SECRET_KEY: ${{ secrets.APCA_API_SECRET_KEY }}
+          MODE: paper
+        run: python main.py
+
+      - name: Export dashboard data
+        run: python export_dashboard.py
+
+      - name: Save results back to the repo
+        run: |
+          git config user.name "PT bot"
+          git config user.email "pt-bot@users.noreply.github.com"
+          ls -la docs/
+          git add docs/data.json
+          [ -f paper_trades.db ] && git add paper_trades.db
+          [ -f paper_peak_equity.txt ] && git add paper_peak_equity.txt
+          [ -f HALT ] && git add HALT
+          git status
+          git diff --cached --quiet || git commit -m "Update trade data $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
