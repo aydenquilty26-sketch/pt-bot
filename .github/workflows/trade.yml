@@ -26,6 +26,7 @@ jobs:
           APCA_API_KEY_ID: ${{ secrets.APCA_API_KEY_ID }}
           APCA_API_SECRET_KEY: ${{ secrets.APCA_API_SECRET_KEY }}
           MODE: paper
+          WATCHLIST: AAPL,MSFT,GOOGL,AMZN,NVDA
         run: python main.py
 
       - name: Export dashboard data
