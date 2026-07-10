@@ -56,7 +56,9 @@
   <div id="halt-banner"></div>
 
   <div class="stat-grid">
-    <div class="stat"><div class="label">Equity</div><div class="value" id="stat-equity">—</div></div>
+    <div class="stat"><div class="label">Starting balance</div><div class="value" id="stat-start">—</div></div>
+    <div class="stat"><div class="label">Equity now</div><div class="value" id="stat-equity">—</div></div>
+    <div class="stat"><div class="label">Total gain/loss</div><div class="value" id="stat-pnl">—</div></div>
     <div class="stat"><div class="label">Cash</div><div class="value" id="stat-cash">—</div></div>
     <div class="stat"><div class="label">In positions</div><div class="value" id="stat-positions">—</div></div>
     <div class="stat"><div class="label">Last update</div><div class="value" id="stat-updated" style="font-size:14px;">—</div></div>
@@ -104,6 +106,21 @@ async function loadDashboard() {
     document.getElementById('stat-updated').textContent = new Date(last.timestamp).toLocaleString();
   }
 
+  if (data.starting_equity != null) {
+    document.getElementById('stat-start').textContent = '$' + Number(data.starting_equity).toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2});
+  }
+
+  if (data.total_pnl != null) {
+    const pnl = Number(data.total_pnl);
+    const pnlPct = Number(data.total_pnl_pct);
+    const sign = pnl >= 0 ? '+' : '';
+    const pnlEl = document.getElementById('stat-pnl');
+    pnlEl.textContent = `${sign}$${pnl.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})} (${sign}${pnlPct.toFixed(2)}%)`;
+    pnlEl.style.color = pnl >= 0 ? 'var(--green)' : 'var(--red)';
+  }
+
+  // Decisions table renders independently of the chart below, so a chart
+  // problem can never hide this data.
   const cycles = data.recent_cycles || [];
   if (cycles.length) {
     let rows = cycles.map(c => `
@@ -124,6 +141,8 @@ async function loadDashboard() {
     document.getElementById('cycles-table').innerHTML = '<div class="empty">No decisions logged yet.</div>';
   }
 
+  // Chart is wrapped separately - if this fails for any reason, everything
+  // above (stats, decisions table) has already rendered successfully.
   if (eq.length) {
     try {
       new Chart(document.getElementById('equity-chart'), {
