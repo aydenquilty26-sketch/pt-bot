@@ -42,4 +42,5 @@ jobs:
           [ -f HALT ] && git add HALT
           git status
           git diff --cached --quiet || git commit -m "Update trade data $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git pull --rebase origin main
           git push
