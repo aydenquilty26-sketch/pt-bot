@@ -102,32 +102,6 @@ async function loadDashboard() {
     document.getElementById('stat-cash').textContent = '$' + Number(last.cash).toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2});
     document.getElementById('stat-positions').textContent = '$' + Number(last.positions_value).toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2});
     document.getElementById('stat-updated').textContent = new Date(last.timestamp).toLocaleString();
-
-    new Chart(document.getElementById('equity-chart'), {
-      type: 'line',
-      data: {
-        labels: eq.map(p => new Date(p.timestamp).toLocaleDateString()),
-        datasets: [{
-          data: eq.map(p => p.equity),
-          borderColor: '#5DCAA5',
-          backgroundColor: 'rgba(93,202,165,0.08)',
-          fill: true,
-          tension: 0.25,
-          pointRadius: 0,
-          borderWidth: 2,
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: { legend: { display: false } },
-        scales: {
-          x: { ticks: { color: '#8A8D85', maxTicksLimit: 8 }, grid: { color: '#262B2F' } },
-          y: { ticks: { color: '#8A8D85' }, grid: { color: '#262B2F' } }
-        }
-      }
-    });
-  } else {
-    document.getElementById('cycles-table').innerHTML = '<div class="empty">No equity history yet.</div>';
   }
 
   const cycles = data.recent_cycles || [];
@@ -148,6 +122,36 @@ async function loadDashboard() {
       </table>`;
   } else {
     document.getElementById('cycles-table').innerHTML = '<div class="empty">No decisions logged yet.</div>';
+  }
+
+  if (eq.length) {
+    try {
+      new Chart(document.getElementById('equity-chart'), {
+        type: 'line',
+        data: {
+          labels: eq.map(p => new Date(p.timestamp).toLocaleDateString()),
+          datasets: [{
+            data: eq.map(p => p.equity),
+            borderColor: '#5DCAA5',
+            backgroundColor: 'rgba(93,202,165,0.08)',
+            fill: true,
+            tension: 0.25,
+            pointRadius: 0,
+            borderWidth: 2,
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { ticks: { color: '#8A8D85', maxTicksLimit: 8 }, grid: { color: '#262B2F' } },
+            y: { ticks: { color: '#8A8D85' }, grid: { color: '#262B2F' } }
+          }
+        }
+      });
+    } catch (e) {
+      console.error('Chart render failed:', e);
+    }
   }
 }
 
