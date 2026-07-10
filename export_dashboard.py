@@ -37,12 +37,24 @@ def export():
 
         conn.close()
 
+        starting_equity = equity_history[0]["equity"] if equity_history else None
+        current_equity = equity_history[-1]["equity"] if equity_history else None
+        total_pnl = None
+        total_pnl_pct = None
+        if starting_equity is not None and current_equity is not None and starting_equity > 0:
+            total_pnl = current_equity - starting_equity
+            total_pnl_pct = (total_pnl / starting_equity) * 100
+
         data = {
             "mode": config.MODE,
             "equity_history": equity_history,
             "recent_cycles": recent_cycles,
             "halted": os.path.exists(config.HALT_FILE),
             "recent_halts": recent_halts,
+            "starting_equity": starting_equity,
+            "current_equity": current_equity,
+            "total_pnl": total_pnl,
+            "total_pnl_pct": total_pnl_pct,
         }
 
     os.makedirs("docs", exist_ok=True)
