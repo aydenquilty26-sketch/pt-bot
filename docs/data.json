@@ -1,0 +1,27 @@
+{
+  "mode": "paper",
+  "equity_history": [
+    {
+      "timestamp": "2026-07-10T02:06:51.097200+00:00",
+      "equity": 100000.0,
+      "cash": 100000.0,
+      "positions_value": 0.0
+    }
+  ],
+  "recent_cycles": [
+    {
+      "timestamp": "2026-07-10T02:06:51.675772+00:00",
+      "ticker": "AAPL",
+      "technical_score": 0.4,
+      "fundamental_score": 0.8,
+      "composite_score": 0.575,
+      "action": "buy",
+      "risk_decision": "approved",
+      "risk_reason": "within limits",
+      "order_id": "a8b3fc43-1016-49a1-94a7-dfb7259468ba",
+      "notes": "submitted"
+    }
+  ],
+  "halted": false,
+  "recent_halts": []
+}
