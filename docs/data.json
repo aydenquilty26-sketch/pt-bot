@@ -162,9 +162,75 @@
       "equity": 103820.61,
       "cash": 38514.91,
       "positions_value": 65305.7
+    },
+    {
+      "timestamp": "2026-07-17T16:46:03.017764+00:00",
+      "equity": 103112.87,
+      "cash": 38514.91,
+      "positions_value": 64597.96
     }
   ],
   "recent_cycles": [
+    {
+      "timestamp": "2026-07-17T16:46:06.644227+00:00",
+      "ticker": "NVDA",
+      "technical_score": -0.1,
+      "fundamental_score": 0.9,
+      "composite_score": null,
+      "action": "none",
+      "risk_decision": "n/a",
+      "risk_reason": "no trade proposed",
+      "order_id": null,
+      "notes": ""
+    },
+    {
+      "timestamp": "2026-07-17T16:46:05.999261+00:00",
+      "ticker": "AMZN",
+      "technical_score": -0.45,
+      "fundamental_score": 0.6,
+      "composite_score": null,
+      "action": "none",
+      "risk_decision": "n/a",
+      "risk_reason": "no trade proposed",
+      "order_id": null,
+      "notes": ""
+    },
+    {
+      "timestamp": "2026-07-17T16:46:05.459387+00:00",
+      "ticker": "GOOGL",
+      "technical_score": -0.65,
+      "fundamental_score": 0.9,
+      "composite_score": null,
+      "action": "none",
+      "risk_decision": "n/a",
+      "risk_reason": "no trade proposed",
+      "order_id": null,
+      "notes": ""
+    },
+    {
+      "timestamp": "2026-07-17T16:46:04.703483+00:00",
+      "ticker": "MSFT",
+      "technical_score": -0.1,
+      "fundamental_score": 0.9,
+      "composite_score": null,
+      "action": "none",
+      "risk_decision": "n/a",
+      "risk_reason": "no trade proposed",
+      "order_id": null,
+      "notes": ""
+    },
+    {
+      "timestamp": "2026-07-17T16:46:04.118007+00:00",
+      "ticker": "AAPL",
+      "technical_score": 0.05,
+      "fundamental_score": 0.8,
+      "composite_score": null,
+      "action": "none",
+      "risk_decision": "n/a",
+      "risk_reason": "no trade proposed",
+      "order_id": null,
+      "notes": ""
+    },
     {
       "timestamp": "2026-07-16T23:38:57.456492+00:00",
       "ticker": "NVDA",
@@ -1597,7 +1663,7 @@
   "halted": false,
   "recent_halts": [],
   "starting_equity": 100000.0,
-  "current_equity": 103820.61,
-  "total_pnl": 3820.6100000000006,
-  "total_pnl_pct": 3.8206100000000007
+  "current_equity": 103112.87,
+  "total_pnl": 3112.8699999999953,
+  "total_pnl_pct": 3.1128699999999956
 }
