@@ -468,9 +468,75 @@
       "equity": 98565.84,
       "cash": 23865.47,
       "positions_value": 74700.36499999999
+    },
+    {
+      "timestamp": "2026-08-11T20:29:58.816897+00:00",
+      "equity": 98545.67,
+      "cash": 23865.47,
+      "positions_value": 74680.201
     }
   ],
   "recent_cycles": [
+    {
+      "timestamp": "2026-08-11T20:30:00.541690+00:00",
+      "ticker": "NVDA",
+      "technical_score": 0.4,
+      "fundamental_score": 0.9,
+      "composite_score": null,
+      "action": "none",
+      "risk_decision": "n/a",
+      "risk_reason": "no trade proposed",
+      "order_id": null,
+      "notes": ""
+    },
+    {
+      "timestamp": "2026-08-11T20:30:00.258511+00:00",
+      "ticker": "AMZN",
+      "technical_score": 0.4,
+      "fundamental_score": 0.8,
+      "composite_score": null,
+      "action": "none",
+      "risk_decision": "n/a",
+      "risk_reason": "no trade proposed",
+      "order_id": null,
+      "notes": ""
+    },
+    {
+      "timestamp": "2026-08-11T20:30:00.015769+00:00",
+      "ticker": "GOOGL",
+      "technical_score": -0.1,
+      "fundamental_score": 0.8,
+      "composite_score": null,
+      "action": "none",
+      "risk_decision": "n/a",
+      "risk_reason": "no trade proposed",
+      "order_id": null,
+      "notes": ""
+    },
+    {
+      "timestamp": "2026-08-11T20:29:59.765959+00:00",
+      "ticker": "MSFT",
+      "technical_score": 0.05,
+      "fundamental_score": 0.9,
+      "composite_score": null,
+      "action": "none",
+      "risk_decision": "n/a",
+      "risk_reason": "no trade proposed",
+      "order_id": null,
+      "notes": ""
+    },
+    {
+      "timestamp": "2026-08-11T20:29:59.337805+00:00",
+      "ticker": "AAPL",
+      "technical_score": 0.1,
+      "fundamental_score": 0.8,
+      "composite_score": null,
+      "action": "none",
+      "risk_decision": "n/a",
+      "risk_reason": "no trade proposed",
+      "order_id": null,
+      "notes": ""
+    },
     {
       "timestamp": "2026-08-11T19:31:06.565531+00:00",
       "ticker": "NVDA",
@@ -2810,72 +2876,12 @@
       "risk_reason": "no trade proposed",
       "order_id": null,
       "notes": ""
-    },
-    {
-      "timestamp": "2026-07-24T18:04:47.333649+00:00",
-      "ticker": "NVDA",
-      "technical_score": -0.1,
-      "fundamental_score": 0.9,
-      "composite_score": null,
-      "action": "none",
-      "risk_decision": "n/a",
-      "risk_reason": "no trade proposed",
-      "order_id": null,
-      "notes": ""
-    },
-    {
-      "timestamp": "2026-07-24T18:04:46.856931+00:00",
-      "ticker": "AMZN",
-      "technical_score": -0.4,
-      "fundamental_score": 0.6,
-      "composite_score": null,
-      "action": "none",
-      "risk_decision": "n/a",
-      "risk_reason": "no trade proposed",
-      "order_id": null,
-      "notes": ""
-    },
-    {
-      "timestamp": "2026-07-24T18:04:46.335085+00:00",
-      "ticker": "GOOGL",
-      "technical_score": -0.05,
-      "fundamental_score": 0.8,
-      "composite_score": null,
-      "action": "none",
-      "risk_decision": "n/a",
-      "risk_reason": "no trade proposed",
-      "order_id": null,
-      "notes": ""
-    },
-    {
-      "timestamp": "2026-07-24T18:04:45.789181+00:00",
-      "ticker": "MSFT",
-      "technical_score": -0.1,
-      "fundamental_score": 0.9,
-      "composite_score": null,
-      "action": "none",
-      "risk_decision": "n/a",
-      "risk_reason": "no trade proposed",
-      "order_id": null,
-      "notes": ""
-    },
-    {
-      "timestamp": "2026-07-24T18:04:45.114533+00:00",
-      "ticker": "AAPL",
-      "technical_score": 0.4,
-      "fundamental_score": 0.8,
-      "composite_score": null,
-      "action": "none",
-      "risk_decision": "n/a",
-      "risk_reason": "no trade proposed",
-      "order_id": null,
-      "notes": ""
     }
   ],
   "halted": false,
   "recent_halts": [],
   "starting_equity": 100000.0,
-  "current_equity": 98565.84,
-  "total_pnl": -1434.1600000000035,
-  "total_pnl_pct": -1.4341600000000034
+  "current_equity": 98545.67,
+  "total_pnl": -1454.3300000000017,
+  "total_pnl_pct": -1.4543300000000017
 }
